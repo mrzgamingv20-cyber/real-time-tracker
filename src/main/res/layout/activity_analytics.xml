@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".ui.AnalyticsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📊 Session Analytics"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Statistics Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_gradient_dark"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:textColor="#FFD700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTotalFrames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Total Frames: 0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvTotalDetections"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Total Detections: 0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvUniqueObjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Unique Objects: 0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvAvgSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Avg Speed: 0 px/s"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvMaxSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Max Speed: 0 px/s"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvTotalDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Total Distance: 0 px"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvAvgBrightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Avg Brightness: 0"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvAvgConfidence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Avg Confidence: 0%"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Duration: 0 ms"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <!-- Motion Graph -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_gradient_dark"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motion Trajectory Graph"
+                android:textColor="#FFD700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.realtimetracker.app.ui.MotionGraphView
+                android:id="@+id/motionGraphView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Motion Details -->
+        <TextView
+            android:id="@+id/tvMotionDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_gradient_dark"
+            android:padding="12dp"
+            android:text="Motion Details"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <!-- Frame Statistics -->
+        <TextView
+            android:id="@+id/tvFrameStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_gradient_dark"
+            android:padding="12dp"
+            android:text="Frame Statistics"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <!-- Anomalies -->
+        <TextView
+            android:id="@+id/tvAnomalies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_gradient_dark"
+            android:padding="12dp"
+            android:text="Anomalies"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <!-- Export Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:spacing="8dp">
+
+            <Button
+                android:id="@+id/btnExportJson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📥 Export to JSON" />
+
+            <Button
+                android:id="@+id/btnExportCsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📊 Export to CSV" />
+
+            <Button
+                android:id="@+id/btnExportStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📈 Export Statistics" />
+
+        </LinearLayout>
+
+        <!-- Spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+    </LinearLayout>
+
+</ScrollView>
