@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Android Studio
+.idea/
+.classpath
+.project
+.settings/
+*.iml
+*.iws
+*.ipr
+
+# Local properties
+local.properties
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output
+*.log
+out/
+
+# Misc
+.env
+.env.local
+secrets/
